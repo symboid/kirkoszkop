@@ -1,7 +1,7 @@
 
-TARGET = krono-app
+TARGET = kirkoszkop-app
 BUILD_ROOT=../..
-COMPONENT_NAME=krono
+COMPONENT_NAME=kirkoszkop
 include($${BUILD_ROOT}/sdk/build/qmake/application.pri)
 
 SOURCES += \

@@ -6,7 +6,7 @@
 
 int main(int _argc, char* _argv[])
 {
-    arh::main_object_init<app_krono, int*, char***> app(&_argc, &_argv);
+    arh::main_object_init<app_kirkoszkop, int*, char***> app(&_argc, &_argv);
     app->setName("Kirkoszkop");
     QQuickStyle::setStyle("Material");
     return app->run();

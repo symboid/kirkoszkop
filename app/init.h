@@ -13,12 +13,12 @@
 #include "astro/hora/init.h"
 #include "krono/calculo/init.h"
 
-struct app_krono : arh::app_qml<app_krono>
+struct app_kirkoszkop : arh::app_qml<app_kirkoszkop>
 {
-    APP_OBJECT(krono)
+    APP_OBJECT(kirkoszkop)
 
-    app_krono(int* _argc, char*** _argv)
-        : arh::app_qml<app_krono>(_argc, _argv)
+    app_kirkoszkop(int* _argc, char*** _argv)
+        : arh::app_qml<app_kirkoszkop>(_argc, _argv)
     {
     }
 

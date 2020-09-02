@@ -16,9 +16,25 @@
     </message>
 </context>
 <context>
-    <name>KronoScreen</name>
+    <name>MainScreen</name>
     <message>
-        <source>Date</source>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Planet positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>House cusps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
