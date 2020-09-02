@@ -38,3 +38,6 @@ android: {
 }
 
 QMAKE_EXTRA_TARGETS += $$object_dep_on_component_header(main)
+
+include($${BUILD_ROOT}/astro/db/sweph/ephe/files.pri)
+$$copySwephFile(sepl_18,se1)
