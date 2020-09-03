@@ -3,5 +3,7 @@
         <file>MainScreen.qml</file>
         <file>main.qml</file>
     </qresource>
-    <qresource prefix="/tr"/>
+    <qresource prefix="/tr">
+        <file>kirkoszkop-app_hu.qm</file>
+    </qresource>
 </RCC>

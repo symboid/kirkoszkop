@@ -32,34 +32,29 @@ Sdk.MainScreen {
         width: metrics.mandalaSize
         height: metrics.mandalaSize
         currentIndex: viewSelector.currentIndex
-        Rectangle {
-            border.width: horaPanel.minHoraSize != horaPanel.horaSize ? 1 : 0
-            border.color: "lightgray"
-            color: "white"
-            HoraPanel {
-                id: horaPanel
-                anchors.fill: parent
-                minHoraSize: metrics.mandalaSize
-                horaSize: metrics.mandalaSize
+        HoraPanel {
+            id: horaPanel
+            isLandscape: metrics.isLandscape
+            minHoraSize: metrics.mandalaSize
+            horaSize: metrics.mandalaSize
 
-                year: dateTimeParams.year
-                month: dateTimeParams.month
-                day: dateTimeParams.day
-                hour: dateTimeParams.hour
-                minute: dateTimeParams.minute
-                second: 0
+            year: dateTimeParams.year
+            month: dateTimeParams.month
+            day: dateTimeParams.day
+            hour: dateTimeParams.hour
+            minute: dateTimeParams.minute
+            second: 0
 
-                geoLatt: locationParams.geoLatt
-                geoLont: locationParams.geoLont
-                tzDiff: locationParams.geoTzDiff
+            geoLatt: locationParams.geoLatt
+            geoLont: locationParams.geoLont
+            tzDiff: locationParams.geoTzDiff
 
-                housesType: "placidus"
-                withJulianCalendar: false
+            housesType: "placidus"
+            withJulianCalendar: false
 
-                Component.onCompleted: {
-                    planetsModel.withSpeed = false
-                    housesModel.withSpeed = false
-                }
+            Component.onCompleted: {
+                planetsModel.withSpeed = false
+                housesModel.withSpeed = false
             }
         }
         PlanetsTableView {
@@ -78,15 +73,9 @@ Sdk.MainScreen {
         showCurrentTimer: false
     }
 
-    MainScreenBottomPane {
+    MainScreenDetailsSwitch {
+        id: details
         referenceItem: locationParams
-        controlItem: Pane {
-            Switch {
-                id: details
-                anchors.centerIn: parent
-                text: qsTr("Details")
-            }
-        }
     }
 
     Component.onCompleted: {

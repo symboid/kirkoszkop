@@ -33,9 +33,5 @@
         <source>House cusps</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Details</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 </TS>
