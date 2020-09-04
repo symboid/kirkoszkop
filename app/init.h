@@ -17,10 +17,8 @@ struct app_kirkoszkop : arh::app_qml<app_kirkoszkop>
 {
     APP_OBJECT(kirkoszkop)
 
-    app_kirkoszkop(int* _argc, char*** _argv)
-        : arh::app_qml<app_kirkoszkop>(_argc, _argv)
-    {
-    }
+    app_kirkoszkop(int* _argc, char*** _argv);
+    ~app_kirkoszkop();
 
     arh::mod_init<mod_sdk_network> _M_mod_sdk_network;
     arh::mod_init<mod_sdk_controls> _M_mod_sdk_controls;
