@@ -17,6 +17,8 @@ struct app_kirkoszkop : arh::app_qml<app_kirkoszkop>
 {
     APP_OBJECT(kirkoszkop)
 
+    static constexpr const char* name = "KirkoSzkop";
+
     app_kirkoszkop(int* _argc, char*** _argv);
     ~app_kirkoszkop();
 
