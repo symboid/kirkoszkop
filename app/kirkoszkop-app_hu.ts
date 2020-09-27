@@ -33,5 +33,25 @@
         <source>House cusps</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Contours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phisical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intellectual:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Emotional:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Krono puppet</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

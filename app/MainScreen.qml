@@ -7,6 +7,7 @@ import Symboid.Astro.Controls 1.0
 import Symboid.Astro.Db 1.0
 import Symboid.Astro.Hora 1.0
 import QtQuick.Layouts 1.12
+import Symboid.Krono.Calculo 1.0
 
 Sdk.MainScreen {
 
@@ -22,10 +23,56 @@ Sdk.MainScreen {
         showSeconds: false
     }
 
+    MainScreenParamBox {
+        id: kronoContours
+        title: qsTr("Contours")
+
+        KronoScope {
+            id: kronoScope
+            year: dateTimeParams.year
+            month: dateTimeParams.month
+            day: dateTimeParams.day
+        }
+        Grid {
+            columns: 2
+            padding: 10
+            rightPadding: 3 * padding
+            rowSpacing: 10
+            columnSpacing: 15
+            horizontalItemAlignment: Grid.AlignRight
+            Text {
+                text: qsTr("Phisical:")
+                font.italic: true
+            }
+            Text {
+                text: kronoScope.phisContour.text
+                font.bold: true
+            }
+
+            Text {
+                text: qsTr("Emotional:")
+                font.italic: true
+            }
+            Text {
+                text: kronoScope.emotContour.text
+                font.bold: true
+            }
+
+            Text {
+                text: qsTr("Intellectual:")
+                font.italic: true
+            }
+            Text {
+                text: kronoScope.intlContour.text
+                font.bold: true
+            }
+        }
+    }
+
     MainScreenViewSelector {
         id: viewSelector
-        viewNames: [ qsTr("Summary") , qsTr("Planet positions") , qsTr("House cusps") ]
-        referenceItem: dateTimeParams
+        viewNames: [ qsTr("Summary") , qsTr("Planet positions") , qsTr("House cusps"), qsTr("Krono puppet") ]
+        referenceItem: kronoContours
     }
 
     StackLayout {
@@ -64,6 +111,23 @@ Sdk.MainScreen {
         HousesTableView {
             tableModel: horaPanel.housesModel
             showSeconds: false
+        }
+        Pane {
+            padding: 24
+            Rectangle {
+                anchors.fill: parent
+                color: "white"
+                radius: 10
+                anchors.margins: 10
+                KronoPuppet {
+                    anchors.margins: 10
+                    anchors.fill: parent
+                    phisCapacity: kronoScope.phisContour.capacity
+                    phisEmission: kronoScope.phisContour.emission
+                    emotCapacity: kronoScope.emotContour.capacity
+                    emotEmission: kronoScope.emotContour.emission
+                }
+            }
         }
     }
 
