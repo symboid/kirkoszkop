@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.12
 import Symboid.Krono.Calculo 1.0
 
 Sdk.MainScreen {
+    id: mainScreen
 
     MainScreenParamBox {
         title: qsTr("Name")
@@ -23,16 +24,16 @@ Sdk.MainScreen {
         showSeconds: false
     }
 
+    property KronoScope kronoScope: KronoScope {
+        year: dateTimeParams.year
+        month: dateTimeParams.month
+        day: dateTimeParams.day
+    }
+
     MainScreenParamBox {
         id: kronoContours
         title: qsTr("Contours")
 
-        KronoScope {
-            id: kronoScope
-            year: dateTimeParams.year
-            month: dateTimeParams.month
-            day: dateTimeParams.day
-        }
         Grid {
             columns: 2
             padding: 10
@@ -71,7 +72,7 @@ Sdk.MainScreen {
 
     MainScreenViewSelector {
         id: viewSelector
-        viewNames: [ qsTr("Summary") , qsTr("Planet positions") , qsTr("House cusps"), qsTr("Krono puppet") ]
+        viewNames: [ qsTr("Summary") , qsTr("Planet positions") , qsTr("House cusps"), qsTr("Krono contours"), qsTr("Krono puppet") ]
         referenceItem: kronoContours
     }
 
@@ -111,6 +112,9 @@ Sdk.MainScreen {
         HousesTableView {
             tableModel: horaPanel.housesModel
             showSeconds: false
+        }
+        KronoTableView {
+            kronoScope: mainScreen.kronoScope
         }
         Pane {
             padding: 24

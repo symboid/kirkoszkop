@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>MainScreen.qml</file>
         <file>main.qml</file>
+        <file>KronoTableView.qml</file>
     </qresource>
     <qresource prefix="/tr">
         <file>kirkoszkop-app_hu.qm</file>
