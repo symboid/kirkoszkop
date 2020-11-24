@@ -138,7 +138,6 @@ Sdk.MainScreen {
     MainScreenLocationBox {
         id: locationParams
         showDetails: details.checked
-        showCurrentTimer: false
     }
 
     MainScreenDetailsSwitch {
